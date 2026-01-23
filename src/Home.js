@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import profilePic from './Uploads/picture.png';
-
-// Then use it in your <img> tag:
-<img src={profilePic} alt="Saloni Profile" />
 
 function Home() {
   const [name, setName] = useState('');
@@ -13,15 +9,12 @@ function Home() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Mapping your state to the EmailJS template variables
-    // These MUST match the {{variable_names}} in your EmailJS dashboard
     const templateParams = {
       from_name: name,     // matches {{from_name}} in dashboard
       from_email: email,   // matches {{from_email}} in dashboard
       message: description, // matches {{message}} in dashboard
     };
 
-    // Sending the email directly from the frontend
     emailjs.send(
       'service_i1yzzce',    // Your confirmed Service ID
       'template_vu6o42g',   // Your current Template ID
@@ -31,7 +24,6 @@ function Home() {
     .then((response) => {
       console.log('SUCCESS!', response.status, response.text);
       alert("Message sent successfully!");
-      // Reset form fields
       setName('');
       setEmail('');
       setDescription('');
@@ -142,97 +134,47 @@ function Home() {
         </div>
       </section>
 
-      {/* --- SECTION 4: EDUCATION SECTION --- */}
+      {/* --- SECTION 4: EDUCATION --- */}
       <section id="education" className="py-20 px-10 md:px-20 bg-black border-t border-gray-900">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16 relative">
-            <h2 className="text-6xl md:text-8xl font-black text-white/[0.03] absolute left-0 right-0 top-1/2 -translate-y-1/2 pointer-events-none uppercase tracking-widest">Resume</h2>
-            <h3 className="text-4xl font-black relative z-10">Education</h3>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="max-w-6xl mx-auto text-center mb-16 relative">
+          <h2 className="text-6xl md:text-8xl font-black text-white/[0.03] absolute left-0 right-0 top-1/2 -translate-y-1/2 pointer-events-none uppercase tracking-widest">Resume</h2>
+          <h3 className="text-4xl font-black relative z-10">Education</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
             {[
-              {
-                year: '2023-2027',
-                degree: 'Bachelor of Technology',
-                school: 'Seth Jai Parkash Mukand Lal Institute of Engineering and Technology, Radaur',
-                description: 'Specializing in Computer Science and Engineering with a focus on Full Stack Development.'
-              },
-              {
-                year: '2021-2023',
-                degree: 'Higher Secondary School',
-                school: 'DAV Centenary Public School, Radaur',
-                description: 'Completed secondary education with a focus on Science and Mathematics.'
-              }
+              { year: '2023-2027', degree: 'Bachelor of Technology', school: 'Seth Jai Parkash Mukand Lal Institute of Engineering and Technology, Radaur' },
+              { year: '2021-2023', degree: 'Higher Secondary School', school: 'DAV Centenary Public School, Radaur' }
             ].map((edu, index) => (
-              <div key={index} className="bg-[#111111] p-8 rounded-xl border border-gray-900 hover:border-yellow-500 transition-all duration-500 group">
+              <div key={index} className="bg-[#111111] p-8 rounded-xl border border-gray-900 hover:border-yellow-500 text-left group">
                 <span className="text-yellow-500 font-black text-xl mb-4 block">{edu.year}</span>
                 <h4 className="text-2xl font-bold mb-2 group-hover:text-yellow-500 transition-colors">{edu.degree}</h4>
-                <p className="text-gray-500 uppercase text-xs font-black tracking-widest mb-4">{edu.school}</p>
-                <p className="text-gray-400 leading-relaxed">{edu.description}</p>
+                <p className="text-gray-500 uppercase text-xs font-black tracking-widest">{edu.school}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* --- SECTION 5: PROJECTS SECTION --- */}
+      {/* --- SECTION 5: PROJECTS --- */}
       <section id="projects" className="py-20 px-10 md:px-20 bg-black border-t border-gray-900">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 relative">
-            <h2 className="text-6xl md:text-8xl font-black text-white/[0.03] absolute left-0 right-0 top-1/2 -translate-y-1/2 pointer-events-none uppercase tracking-widest">
-              PROJECTS
-            </h2>
+            <h2 className="text-6xl md:text-8xl font-black text-white/[0.03] absolute left-0 right-0 top-1/2 -translate-y-1/2 pointer-events-none uppercase tracking-widest">PROJECTS</h2>
             <h3 className="text-4xl font-black relative z-10">My Projects</h3>
           </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {[
-              {
-                title: 'Portfolio Website',
-                description: 'A Portfolio website to showcase my skills and projects.',
-                image: '/Uploads/portfolio.png',
-                tech: ['React', 'Tailwind', 'JS', 'HTML']
-              },
-              {
-                title: 'Zoogle',
-                description: 'A Versatile platform designed for businesses and users to create, manage, and explore profiles- complete with contact details , bio and links , supported by a responsive user interface and a secure backend infrastructure.',
-                image: '/Uploads/zoogle.png',
-                tech: ['MongoDB', 'Node.js', 'Express.js', 'HTML'],
-                github: 'https://github.com/salonisetia/Zoogle-'
-              }
+              { title: 'Portfolio Website', img: '/Uploads/portfolio.png', tech: ['React', 'Tailwind'] },
+              { title: 'Zoogle', img: '/Uploads/zoogle.png', tech: ['MongoDB', 'Node.js'] }
             ].map((project, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-2xl bg-[#0a0a0a] border border-gray-900 hover:border-yellow-500 transition-all duration-500">
-                <div className="aspect-video overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-contain group-hover:grayscale-0 group-hover:scale-105 transition duration-700"
-                  />
-                </div>
+              <div key={index} className="group overflow-hidden rounded-2xl bg-[#0a0a0a] border border-gray-900 hover:border-yellow-500">
+                <img src={project.img} alt={project.title} className="w-full aspect-video object-contain" />
                 <div className="p-8">
-                  <h4 className="text-2xl font-bold mb-3 group-hover:text-yellow-500 transition-colors">{project.title}</h4>
-                  <p className="text-gray-400 leading-relaxed mb-6">{project.description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
+                  <h4 className="text-2xl font-bold mb-3 group-hover:text-yellow-500">{project.title}</h4>
+                  <div className="flex gap-2">
                     {project.tech.map((t, i) => (
-                      <span key={i} className="text-[10px] font-black uppercase tracking-widest bg-gray-900 text-yellow-500/80 px-3 py-1.5 rounded-md border border-gray-800">
-                        {t}
-                      </span>
+                      <span key={i} className="text-[10px] font-black uppercase tracking-widest bg-gray-900 text-yellow-500 px-3 py-1.5 rounded-md">{t}</span>
                     ))}
                   </div>
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-yellow-500 hover:text-yellow-400 transition-colors text-sm font-medium"
-                    >
-                      <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                      </svg>
-                      View on GitHub
-                    </a>
-                  )}
                 </div>
               </div>
             ))}
@@ -240,98 +182,25 @@ function Home() {
         </div>
       </section>
 
-      {/* --- SECTION 6: CONTACT SECTION --- */}
+      {/* --- SECTION 6: CONTACT --- */}
       <section id="contact" className="py-20 px-10 md:px-20 bg-black border-t border-gray-900">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 relative">
-            <h2 className="text-6xl md:text-8xl font-black text-white/[0.03] absolute left-0 right-0 top-1/2 -translate-y-1/2 pointer-events-none uppercase tracking-widest">
-              CONTACT
-            </h2>
+            <h2 className="text-6xl md:text-8xl font-black text-white/[0.03] absolute left-0 right-0 top-1/2 -translate-y-1/2 pointer-events-none uppercase tracking-widest">CONTACT</h2>
             <h3 className="text-4xl font-black relative z-10">Contact Me</h3>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-            {[
-              { label: 'Address', value: 'Radaur, India', icon: '📍' },
-              { label: 'Contact Number', value: '+91 81685 54030', icon: '📞' },
-              { label: 'Email Address', value: 'salonisetia2005@gmail.com', icon: '✉️' },
-              { label: 'LinkedIn', value: 'linkedin.com/in/saloni', icon: '🌐' }
-            ].map((item, index) => (
-              <div key={index} className="flex flex-col items-center group">
-                <div className="w-16 h-16 bg-[#111111] border border-gray-800 rounded-full flex items-center justify-center text-2xl mb-4 group-hover:border-yellow-500 group-hover:bg-yellow-500 group-hover:text-black transition-all duration-500">
-                  {item.icon}
-                </div>
-                <p className="text-[10px] font-black uppercase tracking-widest text-gray-500 mb-1">{item.label}</p>
-                <p className="font-bold text-sm text-gray-300">{item.value}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Contact Form */}
-          <div className="max-w-3xl mx-auto bg-[#0a0a0a] border border-gray-900 rounded-3xl p-12 relative overflow-hidden">
-            <h4 className="text-center text-2xl font-black uppercase tracking-widest mb-10 text-yellow-500">Contact Form</h4>
-            
+          <div className="max-w-3xl mx-auto bg-[#0a0a0a] border border-gray-900 rounded-3xl p-12">
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="flex flex-col space-y-2">
-                <label className="text-[10px] font-black uppercase tracking-widest text-gray-500">Name</label>
-                <input
-                  type="text"
-                  placeholder="Enter Name"
-                  name="from_name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="bg-gray-900 border border-gray-800 rounded-lg px-4 py-4 text-white focus:outline-none focus:border-yellow-500 transition-all"
-                  required
-                />
-              </div>
-
-              <div className="flex flex-col space-y-2">
-                <label className="text-[10px] font-black uppercase tracking-widest text-gray-500">Email</label>
-                <input
-                  type="email"
-                  placeholder="Enter email"
-                  name="from_email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="bg-gray-900 border border-gray-800 rounded-lg px-4 py-4 text-white focus:outline-none focus:border-yellow-500 transition-all"
-                  required
-                />
-                <em className="text-[10px] text-gray-600 italic">We'll never share your email with anyone else.</em>
-              </div>
-
-              <div className="flex flex-col space-y-2">
-                <label className="text-[10px] font-black uppercase tracking-widest text-gray-500">Description</label>
-                <textarea
-                  rows={3}
-                  placeholder="How can I help you?"
-                  name="message"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                  className="bg-gray-900 border border-gray-800 rounded-lg px-4 py-4 text-white focus:outline-none focus:border-yellow-500 transition-all resize-none"
-                  required
-                ></textarea>
-              </div>
-
-              <div className="pt-4 text-center">
-                <button
-                  type="submit"
-                  className="w-full bg-yellow-500 text-black font-black py-5 rounded-full hover:bg-yellow-400 transition-all uppercase text-xs tracking-[0.3em] shadow-[0_10px_20px_rgba(234,179,8,0.2)]"
-                >
-                  Submit
-                </button>
-              </div>
+              <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} className="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-4 text-white focus:border-yellow-500 outline-none" required />
+              <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-4 text-white focus:border-yellow-500 outline-none" required />
+              <textarea rows={3} placeholder="Message" value={description} onChange={(e) => setDescription(e.target.value)} className="w-full bg-gray-900 border border-gray-800 rounded-lg px-4 py-4 text-white focus:border-yellow-500 outline-none resize-none" required></textarea>
+              <button type="submit" className="w-full bg-yellow-500 text-black font-black py-5 rounded-full hover:bg-yellow-400 transition-all uppercase text-xs tracking-[0.3em]">Submit</button>
             </form>
-            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-yellow-500/10 rounded-full blur-3xl"></div>
-          </div>
-
-          <div className="mt-20 pt-8 border-t border-gray-900 text-center text-gray-600 text-[10px] uppercase tracking-widest">
-            <p>© 2026 Saloni Setia | Built with React & Tailwind</p>
           </div>
         </div>
       </section>
-
     </div>
   );
 }
 
-export default Home; 
+export default Home;
