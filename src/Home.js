@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
+import profilePic from './Uploads/picture.png';
+
+// Then use it in your <img> tag:
+<img src={profilePic} alt="Saloni Profile" />
 
 function Home() {
   const [name, setName] = useState('');
