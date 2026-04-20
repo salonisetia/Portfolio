@@ -58,7 +58,9 @@ function Home() {
           </h2>
           <h3 className="text-2xl md:text-3xl font-light text-gray-400">Full Stack Web Developer</h3>
           <div className="flex space-x-4 pt-6">
-            <button className="bg-yellow-500 text-black font-bold px-8 py-4 rounded-full hover:bg-yellow-400 transition uppercase text-xs tracking-widest">Resume</button>
+            <a href="/Uploads/Saloni_Resume.pdf" target="_blank" rel="noopener noreferrer" className="bg-yellow-500 text-black font-bold px-8 py-4 rounded-full hover:bg-yellow-400 transition uppercase text-xs tracking-widest">
+              Resume
+            </a>
           </div>
         </div>
         <div className="md:w-1/2 mt-12 md:mt-0 flex justify-center">
