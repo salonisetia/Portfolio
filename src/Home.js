@@ -142,7 +142,7 @@ function Home() {
                 title: 'Neighbourhood Security System', 
                 img: '/Uploads/SafeNeighbour.png', 
                 tech: ['MERN Stack', 'Tailwind'], 
-                link: 'https://neighbour-security-system-frontend.vercel.app',
+                link: 'https://neighbour-security-system-2u2t.vercel.app/',
                 description: 'A real-time incident reporting platform with admin verification and categorized alerts for community safety.' 
               }
             ].map((project, index) => (
