@@ -138,12 +138,12 @@ function Home() {
                 link: 'https://portfolio-delta-nine-28.vercel.app',
                 description: 'A Portfolio website to showcase my skills and projects using react.js.' 
               },
-              { 
-                title: 'Zoogle', 
-                img: '/Uploads/zoogle.png', 
-                tech: ['MongoDB', 'Node.js'], 
-                link: 'https://github.com/salonisetia/Zoogle-',
-                description: 'A Versatile platform designed for businesses and users to explore profiles.' 
+{ 
+                title: 'Neighbourhood Security System', 
+                img: '/Uploads/SafeNeighbour.png', 
+                tech: ['MERN Stack', 'Tailwind'], 
+                link: 'https://neighbour-security-system.vercel.app',
+                description: 'A real-time incident reporting platform with admin verification and categorized alerts for community safety.' 
               }
             ].map((project, index) => (
               <a key={index} href={project.link} target="_blank" rel="noopener noreferrer" className="group overflow-hidden rounded-2xl bg-[#0a0a0a] border border-gray-900 hover:border-yellow-500 block">
