@@ -65,7 +65,7 @@ function Home() {
         </div>
         <div className="md:w-1/2 mt-12 md:mt-0 flex justify-center">
           <div className="w-64 h-64 md:w-96 md:h-96 bg-gray-900 rounded-full border-4 border-yellow-500 overflow-hidden shadow-[0_0_50px_rgba(234,179,8,0.2)]">
-            <img src="/Uploads/picture.png" alt="Saloni Profile" className="w-full h-full object-cover hover:grayscale-0 transition duration-500" />
+            <img src="/Uploads/picture.jpg" alt="Saloni Profile" className="w-full h-full object-cover hover:grayscale-0 transition duration-500" />
           </div>
         </div>
       </header>
