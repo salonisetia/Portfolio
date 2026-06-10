@@ -75,7 +75,7 @@ function Home() {
         <div className="flex flex-col md:flex-row gap-16 items-start">
           <div className="md:w-1/3 space-y-8">
             <div className="relative">
-              <img src="/Uploads/picture.png" alt="Profile Thumbnail" className="w-32 h-32 rounded-full border-4 border-yellow-500 object-cover" />
+              <img src="/Uploads/picture.jpg" alt="Profile Thumbnail" className="w-32 h-32 rounded-full border-4 border-yellow-500 object-cover" />
               <div className="mt-6 space-y-3 text-sm">
                 <p><span className="text-gray-500 font-bold uppercase tracking-tighter mr-2">Name:</span> Saloni Setia</p>
                 <p><span className="text-gray-500 font-bold uppercase tracking-tighter mr-2">Job Role:</span> Full Stack Developer</p>
