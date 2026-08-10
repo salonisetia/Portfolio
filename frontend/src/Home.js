@@ -106,6 +106,7 @@ function Home() {
         </div>
       </section>
 
+      {/* --- SECTION 4: EXPERIENCE --- */}
       <section id="experience" className="py-20 px-10 md:px-20 bg-black border-t border-gray-900">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 relative">
@@ -130,7 +131,7 @@ function Home() {
         </div>
       </section>
 
-      {/* --- SECTION 4: EDUCATION --- */}
+      {/* --- SECTION 5: EDUCATION --- */}
       <section id="education" className="py-20 px-10 md:px-20 bg-black border-t border-gray-900">
         <div className="max-w-6xl mx-auto text-center mb-16 relative">
           <h2 className="text-6xl md:text-8xl font-black text-white/[0.03] absolute left-0 right-0 top-1/2 -translate-y-1/2 pointer-events-none uppercase tracking-widest">Resume</h2>
@@ -147,7 +148,7 @@ function Home() {
         </div>
       </section>
 
-      {/* --- SECTION 5: PROJECTS --- */}
+      {/* --- SECTION 6: PROJECTS --- */}
       <section id="projects" className="py-20 px-10 md:px-20 bg-black border-t border-gray-900">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 relative">
@@ -188,7 +189,7 @@ function Home() {
         </div>
       </section>
 
-      {/* --- SECTION 6: CONTACT --- */}
+      {/* --- SECTION 7: CONTACT --- */}
       <section id="contact" className="py-20 px-10 md:px-20 bg-black border-t border-gray-900">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16 relative">
