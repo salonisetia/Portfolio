@@ -162,14 +162,14 @@ function Home() {
                 img: '/Uploads/urbanroute.png', 
                 tech: ['React', 'Tailwind', 'Node.js'], 
                 link: 'https://vercel.com/salonis-projects-0d2d23bf/urban-route', 
-                description: 'A web platform designed to facilitate urban farming and plant care management.' 
+                description: 'A full-stack public transit routing platform built to deliver real-time, stop-to-stop route searches and directions for users.' 
               },
               { 
                 title: 'Neighbourhood Security System', 
                 img: '/Uploads/SafeNeighbour.png', 
                 tech: ['MERN Stack', 'Tailwind'], 
                 link: 'https://neighbour-security-system-2u2t.vercel.app/',
-                description: 'A full-stack public transit routing platform built to deliver real-time, stop-to-stop route searches with low-latency Mongoose queries.' 
+                description: 'A full-stack web application designed to enhance neighborhood security by enabling residents to report incidents, share alerts, and communicate effectively within their community.' 
               }
             ].map((project, index) => (
               <a key={index} href={project.link} target="_blank" rel="noopener noreferrer" className="group overflow-hidden rounded-2xl bg-[#0a0a0a] border border-gray-900 hover:border-yellow-500 block">
