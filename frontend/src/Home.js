@@ -169,7 +169,7 @@ function Home() {
                 img: '/Uploads/SafeNeighbour.png', 
                 tech: ['MERN Stack', 'Tailwind'], 
                 link: 'https://neighbour-security-system-2u2t.vercel.app/',
-                description: 'A real-time incident reporting platform with admin verification and categorized alerts for community safety.' 
+                description: 'A full-stack public transit routing platform built to deliver real-time, stop-to-stop route searches with low-latency Mongoose queries.' 
               }
             ].map((project, index) => (
               <a key={index} href={project.link} target="_blank" rel="noopener noreferrer" className="group overflow-hidden rounded-2xl bg-[#0a0a0a] border border-gray-900 hover:border-yellow-500 block">
