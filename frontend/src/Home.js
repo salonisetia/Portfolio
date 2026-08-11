@@ -158,7 +158,7 @@ function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {[
              { 
-                title: 'Urban Root', 
+                title: 'UrbanRoute', 
                 img: '/Uploads/urbanroute.png', 
                 tech: ['React', 'Tailwind', 'Node.js'], 
                 link: 'https://vercel.com/salonis-projects-0d2d23bf/urban-route', 
