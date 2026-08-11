@@ -146,7 +146,7 @@ function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> 
 
       {/* --- SECTION 6: PROJECTS --- */}
       <section id="projects" className="py-20 px-10 md:px-20 bg-black border-t border-gray-900">
@@ -157,14 +157,14 @@ function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             {[
-              { 
-                title: 'Portfolio Website', 
-                img: '/Uploads/portfolio.png', 
-                tech: ['React', 'Tailwind'], 
-                link: 'https://portfolio-delta-nine-28.vercel.app',
-                description: 'A Portfolio website to showcase my skills and projects using react.js.' 
+             { 
+                title: 'Urban Root', 
+                img: '/Uploads/urbanroute.png', 
+                tech: ['React', 'Tailwind', 'Node.js'], 
+                link: 'https://vercel.com/salonis-projects-0d2d23bf/urban-route', 
+                description: 'A web platform designed to facilitate urban farming and plant care management.' 
               },
-{ 
+              { 
                 title: 'Neighbourhood Security System', 
                 img: '/Uploads/SafeNeighbour.png', 
                 tech: ['MERN Stack', 'Tailwind'], 
@@ -188,6 +188,7 @@ function Home() {
           </div>
         </div>
       </section>
+
 
       {/* --- SECTION 7: CONTACT --- */}
       <section id="contact" className="py-20 px-10 md:px-20 bg-black border-t border-gray-900">
